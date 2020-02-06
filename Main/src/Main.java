@@ -1,52 +1,70 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner readerMain = new Scanner(System.in);
         Draw.drawSplash();
         System.out.println();
-        playerSelect();
-        difficultySelect();
-
-    }
-
-    public static void playerSelect() {
-        int numOfPlayers = 0;
-        int x = 1;
+        Game.difficultySelect();
+        Draw.drawFigure0();
+        System.out.println();
+        System.out.print("Your word: ");
+        String word = WordPool.getWord(Game.difficulty);
+        for (int i = 0; i < word.length(); i++) {
+            System.out.print("_ ");
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println("Remaining letters: ");
+        for (int i = 0; i < Game.getAlphabet().size(); i++) {
+            System.out.print(Game.getAlphabet().get(i) + " ");
+        }
+        System.out.println();
+        System.out.println();
+        System.out.print("Choose a letter: ");
         do {
-            try {
-                Scanner reader = new Scanner(System.in);
-                System.out.println("How many players?\n  Enter 1 or 2: ");
-                numOfPlayers = reader.nextInt();
-                x = 2;
-            } catch (Exception e) {
-                System.out.println("You must enter either 1 or 2");
+            String letterPick = readerMain.nextLine();
+            if (word.contains(letterPick)) {
+                System.out.println("Found!");
+                //TODO left off here - print updated word
+            } else {
+                System.out.println("Not found");
             }
-        } while (x == 1);
-        if (numOfPlayers == 2) {
-            System.out.println("2-player game coming soon!");
-        }
+        } while (true);
+
+
+
+
     }
 
-    public static void difficultySelect() {
-        Scanner reader = new Scanner(System.in);
-        System.out.println("Select your difficulty:");
-        System.out.println();
-        System.out.println("  Easy - 1");
-        System.out.println("Medium - 2");
-        System.out.println("  Hard - 3");
-        System.out.println();
-        int userDifficulty = reader.nextInt();
-        while (userDifficulty < 1 || userDifficulty > 3) {
-            System.out.println("You must enter a valid option");
-            difficultySelect();
-        }
-        if (userDifficulty == 1) {
-            Game.newGame(userDifficulty);
-        } else if (userDifficulty == 2) {
-            Game.newGame(userDifficulty);
-        } else {
-            Game.newGame(userDifficulty);
-        }
-    }
+//    public static int playerSelect() {
+//        Scanner readerPlayerSelect = new Scanner(System.in);
+//        int numOfPlayers = 0;
+//        boolean correctInput = false;
+//        do {
+//            try {
+//                System.out.print("How many players?\n  Enter 1 or 2: ");
+//                numOfPlayers = Integer.parseInt(readerPlayerSelect.nextLine());
+//                while (numOfPlayers < 1 || numOfPlayers > 2) {
+//                    System.out.println();
+//                    System.out.print("You must enter either 1 or 2: ");
+//                    numOfPlayers = Integer.parseInt(readerPlayerSelect.nextLine());
+//                }
+//                correctInput = true;
+//            } catch (Exception e) {
+//                System.out.println();
+//                System.out.println("You must enter either 1 or 2");
+//                System.out.println();
+//            }
+//        } while (!correctInput);
+//        if (numOfPlayers == 2) {
+//            System.out.println();
+//            System.out.println("2-player game coming soon!");
+//        }
+//        return numOfPlayers;
+//    }
+
+
 }
