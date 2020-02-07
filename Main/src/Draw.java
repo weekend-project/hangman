@@ -1,122 +1,112 @@
 public class Draw {
 
-    public static void drawFigure0() {
-        System.out.println("    ________      ");
-        System.out.println("    |     \\|      ");
-        System.out.println("    |      |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("          /|      ");
-        System.out.println("_________/_|______");
-    }
-
-    public static void drawFigure1() {
-        System.out.println("    ________      ");
-        System.out.println("    |     \\|      ");
-        System.out.println("    |      |      ");
-        System.out.println("   ( )     |      ");
-        System.out.println("    =      |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("          /|      ");
-        System.out.println("_________/_|______");
-    }
-
-    public static void drawFigure2() {
-        System.out.println("    ________      ");
-        System.out.println("    |     \\|      ");
-        System.out.println("    |      |      ");
-        System.out.println("   ( )     |      ");
-        System.out.println("    =      |      ");
-        System.out.println("    |      |      ");
-        System.out.println("    |      |      ");
-        System.out.println("   ---     |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("          /|      ");
-        System.out.println("_________/_|______");
-    }
-
-    public static void drawFigure3() {
-        System.out.println("    ________      ");
-        System.out.println("    |     \\|      ");
-        System.out.println("    |      |      ");
-        System.out.println("   ( )     |      ");
-        System.out.println("    =      |      ");
-        System.out.println("    |\\     |      ");
-        System.out.println("    | \\    |      ");
-        System.out.println("   ---     |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("          /|      ");
-        System.out.println("_________/_|______");
-    }
-
-    public static void drawFigure4() {
-        System.out.println("    ________      ");
-        System.out.println("    |     \\|      ");
-        System.out.println("    |      |      ");
-        System.out.println("   ( )     |      ");
-        System.out.println("    =      |      ");
-        System.out.println("   /|\\     |      ");
-        System.out.println("  / | \\    |      ");
-        System.out.println("   ---     |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("          /|      ");
-        System.out.println("_________/_|______");
-    }
-
-    public static void drawFigure5() {
-        System.out.println("    ________      ");
-        System.out.println("    |     \\|      ");
-        System.out.println("    |      |      ");
-        System.out.println("   ( )     |      ");
-        System.out.println("    =      |      ");
-        System.out.println("   /|\\     |      ");
-        System.out.println("  / | \\    |      ");
-        System.out.println("   ---     |      ");
-        System.out.println("      \\    |      ");
-        System.out.println("       ^   |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("          /|      ");
-        System.out.println("_________/_|______");
-    }
-
-    public static void drawFigure6() {
-        System.out.println("    ________      ");
-        System.out.println("    |     \\|      ");
-        System.out.println("    |      |      ");
-        System.out.println("   ( )     |      ");
-        System.out.println("    =      |      ");
-        System.out.println("   /|\\     |      ");
-        System.out.println("  / | \\    |      ");
-        System.out.println("   ---     |      ");
-        System.out.println("  /   \\    |      ");
-        System.out.println(" ^     ^   |      ");
-        System.out.println("           |      ");
-        System.out.println("           |      ");
-        System.out.println("          /|      ");
-        System.out.println("_________/_|______");
+    public static void drawFigure(int counter) {
+        if (counter == 0) {
+            System.out.println("    ________      ");
+            System.out.println("    |     \\|      ");
+            System.out.println("    |      |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("          /|      ");
+            System.out.println("_________/_|______");
+        } else if (counter == 1) {
+            System.out.println("    ________      ");
+            System.out.println("    |     \\|      ");
+            System.out.println("    |      |      ");
+            System.out.println("   ( )     |      ");
+            System.out.println("    =      |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("          /|      ");
+            System.out.println("_________/_|______");
+        } else if (counter == 2) {
+            System.out.println("    ________      ");
+            System.out.println("    |     \\|      ");
+            System.out.println("    |      |      ");
+            System.out.println("   ( )     |      ");
+            System.out.println("    =      |      ");
+            System.out.println("    |      |      ");
+            System.out.println("    |      |      ");
+            System.out.println("   ---     |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("          /|      ");
+            System.out.println("_________/_|______");
+        } else if (counter == 3) {
+            System.out.println("    ________      ");
+            System.out.println("    |     \\|      ");
+            System.out.println("    |      |      ");
+            System.out.println("   ( )     |      ");
+            System.out.println("    =      |      ");
+            System.out.println("    |\\     |      ");
+            System.out.println("    | \\    |      ");
+            System.out.println("   ---     |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("          /|      ");
+            System.out.println("_________/_|______");
+        } else if (counter == 4) {
+            System.out.println("    ________      ");
+            System.out.println("    |     \\|      ");
+            System.out.println("    |      |      ");
+            System.out.println("   ( )     |      ");
+            System.out.println("    =      |      ");
+            System.out.println("   /|\\     |      ");
+            System.out.println("  / | \\    |      ");
+            System.out.println("   ---     |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("          /|      ");
+            System.out.println("_________/_|______");
+        } else if (counter == 5) {
+            System.out.println("    ________      ");
+            System.out.println("    |     \\|      ");
+            System.out.println("    |      |      ");
+            System.out.println("   ( )     |      ");
+            System.out.println("    =      |      ");
+            System.out.println("   /|\\     |      ");
+            System.out.println("  / | \\    |      ");
+            System.out.println("   ---     |      ");
+            System.out.println("      \\    |      ");
+            System.out.println("       ^   |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("          /|      ");
+            System.out.println("_________/_|______");
+        } else if (counter == 6) {
+            System.out.println("    ________      ");
+            System.out.println("    |     \\|      ");
+            System.out.println("    |      |      ");
+            System.out.println("   ( )     |      ");
+            System.out.println("    =      |      ");
+            System.out.println("   /|\\     |      ");
+            System.out.println("  / | \\    |      ");
+            System.out.println("   ---     |      ");
+            System.out.println("  /   \\    |      ");
+            System.out.println(" ^     ^   |      ");
+            System.out.println("           |      ");
+            System.out.println("           |      ");
+            System.out.println("          /|      ");
+            System.out.println("_________/_|______");
+        }
     }
 
     // http://patorjk.com/software/taag/#p=display&f=Big&t=Hangman
@@ -136,7 +126,5 @@ public class Draw {
         System.out.println("          |                                    ");
         System.out.println("         /|                                    ");
         System.out.println("________/_|_____                               ");
-
     }
-
 }
