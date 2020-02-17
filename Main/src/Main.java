@@ -7,18 +7,11 @@ import static java.lang.Character.toUpperCase;
 
 public class Main {
 
-    //TODO move contents of main method into Game.java class
-
-    //TODO fix control flow for when user guesses all words correctly, or uses all turns
-
     //TODO add option to guess full word
 
-    //TODO display full word if user loses
-
-    private static ArrayList<String> alphabet = new ArrayList<>(Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H",
-            "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"));
-
     public static void main(String[] args) throws FileNotFoundException {
+        ArrayList<String> alphabet = new ArrayList<>(Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H",
+                "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"));
         Scanner readerMain = new Scanner(System.in);
         int notFound = 0;
         int wasFound = 0;
@@ -58,17 +51,24 @@ public class Main {
             }
             if (word.contains(letterPickString)) {
                 wasFound++;
-                System.out.println();
-                System.out.println("'" + letterPickUpper + "'" + " was found!");
-                System.out.println();
                 for (int i = 0; i < word.length(); i++) { // cycles through each char in the word,
                     if (letterPickUpper == (word.charAt(i))) { // if it matches,
                         wordArray.set(i, Character.toUpperCase(letterPick));
                     }
                 }
+                if (isComplete(word,wordArray)) {
+                    break;
+                }
+                System.out.println();
+                System.out.println("'" + letterPickUpper + "'" + " was found!");
+                System.out.println();
+
             } else {
                 notFound++;
                 Draw.drawFigure(notFound);
+                if (notFound == 6) {
+                    break;
+                }
                 System.out.println();
                 System.out.println("'" + letterPickUpper + "'" + " was not found, tray again :-(");
                 System.out.println();
@@ -89,52 +89,54 @@ public class Main {
         System.out.println();
         if (notFound == 6) {
             System.out.println("GAME OVER - You lost!");
-            // reveal the word
+            System.out.println();
+            System.out.print("The word was: ");
+            for (int i = 0; i < word.length(); i++) {
+                System.out.print(word.toUpperCase().charAt(i) + " ");
+            }
+            System.out.print("!!!");
+            System.out.println();
             System.out.println();
             System.out.println("Play again?");
+            System.out.println();
+            System.out.println("    Yes - 1");
+            System.out.println("     No - 0");
+            System.out.print("> ");
+            int playAgain = readerMain.nextInt();
+            if (playAgain == 1) {
+                main(args);
+            } else {
+                System.out.println("Thanks for playing!");
+            }
+
         } else {
             System.out.println("CONGRATULATIONS - You won!");
             System.out.println();
             System.out.println("Play again?");
+            System.out.println();
+            System.out.println("    Yes - 1");
+            System.out.println("     No - 0");
+            System.out.print("> ");
+            int playAgain = readerMain.nextInt();
+            if (playAgain == 1) {
+                main(args);
+            } else {
+                System.out.println("Thanks for playing!");
+            }
         }
-
-        // if (yes) { recursive call }
     }
 
     public static boolean isComplete (String word, ArrayList<Character> wordArray) {
         boolean isComplete = false;
-        if (word.contentEquals((CharSequence) wordArray)) {
+        int counter = 0;
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == wordArray.get(i)) {
+                counter++;
+            }
+        }
+        if (counter == word.length()) {
             isComplete = true;
         }
         return isComplete;
     }
-
-//    public static int playerSelect() {
-//        Scanner readerPlayerSelect = new Scanner(System.in);
-//        int numOfPlayers = 0;
-//        boolean correctInput = false;
-//        do {
-//            try {
-//                System.out.print("How many players?\n  Enter 1 or 2: ");
-//                numOfPlayers = Integer.parseInt(readerPlayerSelect.nextLine());
-//                while (numOfPlayers < 1 || numOfPlayers > 2) {
-//                    System.out.println();
-//                    System.out.print("You must enter either 1 or 2: ");
-//                    numOfPlayers = Integer.parseInt(readerPlayerSelect.nextLine());
-//                }
-//                correctInput = true;
-//            } catch (Exception e) {
-//                System.out.println();
-//                System.out.println("You must enter either 1 or 2");
-//                System.out.println();
-//            }
-//        } while (!correctInput);
-//        if (numOfPlayers == 2) {
-//            System.out.println();
-//            System.out.println("2-player game coming soon!");
-//        }
-//        return numOfPlayers;
-//    }
-
-
 }

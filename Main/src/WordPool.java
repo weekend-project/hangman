@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class WordPool {
 
-
     public static String getWord(int difficulty) throws FileNotFoundException {
         String word = "";
         Random rand = new Random();
